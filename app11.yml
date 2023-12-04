@@ -1,0 +1,5 @@
+     1  FROM ubuntu
+     2  ARG DEBIAN_FRONTEND=noninteractive
+     3  RUN apt-get update && apt-get install -y golang-go
+     4  COPY app.go .
+     5  RUN CGO_ENABLED=0 go build app.go
